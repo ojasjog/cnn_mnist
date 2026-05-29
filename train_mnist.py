@@ -120,12 +120,10 @@ def gradient_descent(X, Y, learning_rate, iterations):
         accuracy = np.mean(np.argmax(A2, axis=0) == Y)
         print(f"Accuracy: {accuracy:.4f}")
         print(f"Predictions: {get_predictions(A2)[:10]}")
-        
-        
 
     return W1, b1, W2, b2
 
-learning_rate = 0.1
+learning_rate = 0.01
 iterations = 1000
 W1, b1, W2, b2 = gradient_descent(X_train, Y_train, learning_rate, iterations)
 Z1_dev, A1_dev, Z2_dev, A2_dev = prop(W1, b1, W2, b2, X_dev)
